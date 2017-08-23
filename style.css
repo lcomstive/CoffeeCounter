@@ -1,0 +1,74 @@
+/* https://fonts.google.com/specimen/Encode+Sans */
+@import url('https://fonts.googleapis.com/css?family=Encode+Sans');
+
+body, html
+{
+	height: 100%;
+	display: grid;
+	color: #ECE9D6;
+	background-color: #332928;
+	overflow: hidden;
+	font-family: 'Encode Sans', sans-serif;
+}
+
+.coffee_container
+{
+	margin: auto;
+	font-size: 1.75vw;
+	align-items: center;
+	display: inline-flex;
+	justify-content: center;
+}
+
+#coffee_add, #coffee_reset
+{
+	border: none;
+	color: #ECE9D6;
+	background: none;
+	margin-left: 10px;
+	background-color: #423533;
+}
+
+#coffee_add:focus, #coffee_reset:focus
+{
+	outline-color: #846964;
+}
+
+#coffee_reset
+{
+	position: absolute;
+	right: 5px;
+	bottom: 5px;
+	padding: 7.5px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+#coffee_logo
+{
+	width: 30vw;
+	height: auto;
+}
+
+.footer
+{
+	position: absolute;
+	width: 100%;
+	left: 0;
+	bottom: 0;
+	font-size: 1.25vw;
+	text-align: center;
+	margin-bottom: 5px;
+}
+
+.footer p
+{
+	margin: 0;
+	margin-bottom: 0.25vh;
+}
+
+a
+{
+	color: #89877b;
+	text-decoration: none;
+}
