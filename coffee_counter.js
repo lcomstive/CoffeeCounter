@@ -1,4 +1,8 @@
 var coffeeCount = 0;
+var coffeesToday = 0;
+var day = null;
+
+var caffienePerCoffee = 80; // grams
 
 // From https://stackoverflow.com/questions/11381673/detecting-a-mobile-browser
 function isMobile()
@@ -17,25 +21,51 @@ function loadCoffee()
 		console.log("Mobile device detected (portrait orientation)");
 	}
 	coffeeCount = localStorage.getItem("coffee_count");
+    coffeesToday = localStorage.getItem("coffees_today");
+    var dayString = localStorage.getItem("coffee_today");
 	if(coffeeCount == null)
 		coffeeCount = 0;
+    if(coffeesToday == null)
+        coffeesToday = 0;
+    if(dayString == null)
+        day = new Date();
+    else
+    {
+        day = new Date(dayString);
+        if(day.toDateString() != new Date().toDateString()) // if day changed, reset today's count
+        {
+            coffeesToday = 0;
+            day = new Date();
+        }
+    }
 	updateCoffeeCounter();
 }
 
 function addCoffee()
 {
 	coffeeCount++;
+    coffeesToday++;
+    if(day.toDateString() != new Date().toDateString()) // if day changed, reset today's count
+    {
+        coffeesToday = 0;
+        day = new Date();
+    }
+
 	localStorage.setItem("coffee_count", coffeeCount);
+    localStorage.setItem("coffees_today", coffeesToday);
+    localStorage.setItem("coffee_today", day.toDateString());
 	updateCoffeeCounter();
 }
 
 function updateCoffeeCounter()
 {
-	document.getElementById("coffee_count").innerHTML = "Coffees: " + coffeeCount;
+	document.getElementById("coffee_count").innerHTML = "Coffees: " + coffeeCount + "<br><span style='opacity:0.4;'>Today: " + coffeesToday + "</span>";
 }
 
 function resetCoffee()
 {
 	localStorage.setItem("coffee_count", (coffeeCount = 0));
+    localStorage.setItem("coffees_today", (coffeesToday = 0));
+    localStorage.setItem("coffee_today", (day = new Date()).toDateString());
 	updateCoffeeCounter();
 }

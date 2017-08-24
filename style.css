@@ -50,6 +50,11 @@ body, html
 	height: auto;
 }
 
+#coffee_count
+{
+    text-align: right;
+}
+
 .footer
 {
 	position: absolute;
