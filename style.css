@@ -11,6 +11,22 @@ body, html
 	font-family: 'Encode Sans', sans-serif;
 }
 
+button
+{
+	border: none;
+	color: #ECE9D6;
+	background: none;
+	background-color: #423533;
+}
+
+button:focus { outline-color: #846964; }
+
+a
+{
+	color: #89877b;
+	text-decoration: none;
+}
+
 .coffee_container
 {
 	margin: auto;
@@ -20,18 +36,21 @@ body, html
 	justify-content: center;
 }
 
-#coffee_add, #coffee_reset
+.footer
 {
-	border: none;
-	color: #ECE9D6;
-	background: none;
-	margin-left: 10px;
-	background-color: #423533;
+	position: absolute;
+	width: 100%;
+	left: 0;
+	bottom: 0;
+	font-size: 1.25vw;
+	text-align: center;
+	margin-bottom: 5px;
 }
 
-#coffee_add:focus, #coffee_reset:focus
+.footer p
 {
-	outline-color: #846964;
+	margin: 0;
+	margin-bottom: 0.25vh;
 }
 
 #coffee_reset
@@ -55,25 +74,8 @@ body, html
     text-align: right;
 }
 
-.footer
+#coffee_add
 {
-	position: absolute;
-	width: 100%;
-	left: 0;
-	bottom: 0;
-	font-size: 1.25vw;
-	text-align: center;
-	margin-bottom: 5px;
-}
-
-.footer p
-{
-	margin: 0;
-	margin-bottom: 0.25vh;
-}
-
-a
-{
-	color: #89877b;
-	text-decoration: none;
+	margin-left: 10px;
+	display: inline-block;
 }

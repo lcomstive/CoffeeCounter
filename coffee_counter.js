@@ -1,8 +1,4 @@
-var coffeeCount = 0;
-var coffeesToday = 0;
-var day = null;
-
-var caffienePerCoffee = 80; // grams
+var coffeeCount = 0, coffeesToday = 0, day;
 
 // From https://stackoverflow.com/questions/11381673/detecting-a-mobile-browser
 function isMobile()
@@ -23,11 +19,9 @@ function loadCoffee()
 	coffeeCount = localStorage.getItem("coffee_count");
     coffeesToday = localStorage.getItem("coffees_today");
     var dayString = localStorage.getItem("coffee_today");
-	if(coffeeCount == null)
-		coffeeCount = 0;
-    if(coffeesToday == null)
-        coffeesToday = 0;
-    if(dayString == null)
+	coffeeCount = coffeeCount || 0;
+	coffeesToday = coffeesToday || 0;
+    if(!dayString)
         day = new Date();
     else
     {
